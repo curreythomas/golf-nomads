@@ -168,6 +168,7 @@ button. User is directed to the add tee time page (UI: courses/id/teetimes/add)
        golfers: "number of golfers",
        holes: "number of holes",
        rate: "price per person",
+       type: "course"
        picURL: "image url"
     }
 ]
