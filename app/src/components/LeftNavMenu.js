@@ -4,6 +4,7 @@ import { withStyles } from 'material-ui/styles'
 import IconButton from 'material-ui/IconButton'
 import Divider from 'material-ui/Divider'
 import MenuIcon from 'material-ui-icons/Menu'
+import { Link } from 'react-router-dom'
 import Menu, { MenuItem, MenuList } from 'material-ui/Menu'
 
 const styles = theme => ({
@@ -23,7 +24,9 @@ const styles = theme => ({
     width: '50vw',
     outline: 'none',
     outlineStyle: 'none',
-    boxShadow: 'none'
+    boxShadow: 'none',
+    textDecoration: 'none',
+    borderRadius: '50'
   }
 })
 
@@ -57,7 +60,6 @@ class LeftNavMenu extends React.Component {
           <MenuIcon />
         </IconButton>
         <Menu
-          className="no-focus no-underline"
           autoWidth={true}
           id="simple-menu"
           anchorEl={this.state.anchorEl}
@@ -65,12 +67,22 @@ class LeftNavMenu extends React.Component {
           onRequestClose={this.handleRequestClose}
         >
           <div className={classes.menu}>
-            <MenuItem onClick={this.handleRequestClose}>Home</MenuItem>
-            <MenuItem onClick={this.handleRequestClose}>About</MenuItem>
-            <MenuItem onClick={this.handleRequestClose}>Courses</MenuItem>
+            <Link to="/" className={classes.menu}>
+              <MenuItem onClick={this.handleRequestClose}>Home</MenuItem>
+            </Link>
+            <Link to="/about" className={classes.menu}>
+              <MenuItem onClick={this.handleRequestClose}>About</MenuItem>
+            </Link>
+            <Link to="/courses" className={classes.menu}>
+              <MenuItem onClick={this.handleRequestClose}>Courses</MenuItem>
+            </Link>
             <Divider className={classes.inset} />
-            <MenuItem onClick={this.handleRequestClose}>FAQ</MenuItem>
-            <MenuItem onClick={this.handleRequestClose}>Contact</MenuItem>
+            <Link to="/faq" className={classes.menu}>
+              <MenuItem onClick={this.handleRequestClose}>FAQ</MenuItem>
+            </Link>
+            <Link to="/contact" className={classes.menu}>
+              <MenuItem onClick={this.handleRequestClose}>Contact</MenuItem>
+            </Link>
           </div>
         </Menu>
       </div>

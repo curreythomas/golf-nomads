@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import MenuAppBar from '../../components/MenuAppBar'
 import SimpleBottomNavigation from '../../components/NavBarBottom'
-import Button from 'material-ui/Button'
 import Background from '../../images/golf2.jpg'
 import Overlay from '../../images/overlay.png'
 
@@ -23,7 +22,7 @@ const styles = {
   }
 }
 
-class Home extends React.Component {
+class About extends React.Component {
   render() {
     return (
       <div style={styles.background}>
@@ -36,4 +35,4 @@ class Home extends React.Component {
     )
   }
 }
-export default Home
+export default About

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import { withStyles } from 'material-ui/styles'
 import AppBar from 'material-ui/AppBar'
 import Toolbar from 'material-ui/Toolbar'
@@ -21,6 +22,13 @@ const styles = theme => ({
   menuButton: {
     marginLeft: -12,
     marginRight: 20
+  },
+  menu: {
+    position: 'relative',
+    outline: 'none',
+    outlineStyle: 'none',
+    boxShadow: 'none',
+    textDecoration: 'none'
   }
 })
 
@@ -81,8 +89,14 @@ class MenuAppBar extends React.Component {
                   open={open}
                   onRequestClose={this.handleRequestClose}
                 >
-                  <MenuItem onClick={this.handleRequestClose}>Login</MenuItem>
-                  <MenuItem onClick={this.handleRequestClose}>Sign Up</MenuItem>
+                  <Link to="/login" className={classes.menu}>
+                    <MenuItem onClick={this.handleRequestClose}>Login</MenuItem>
+                  </Link>
+                  <Link to="/signup" className={classes.menu}>
+                    <MenuItem onClick={this.handleRequestClose}>
+                      Sign Up
+                    </MenuItem>
+                  </Link>
                 </Menu>
               </div>
             )}
