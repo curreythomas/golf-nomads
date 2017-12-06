@@ -8,6 +8,7 @@ import IconButton from 'material-ui/IconButton'
 import MenuIcon from 'material-ui-icons/Menu'
 import AccountCircle from 'material-ui-icons/AccountCircle'
 import Menu, { MenuItem } from 'material-ui/Menu'
+import LeftNavMenu from './LeftNavMenu'
 
 const styles = theme => ({
   root: {
@@ -34,7 +35,9 @@ class MenuAppBar extends React.Component {
   }
 
   handleMenu = event => {
-    this.setState({ anchorEl: event.currentTarget })
+    this.setState({
+      anchorEl: event.currentTarget
+    })
   }
 
   handleRequestClose = () => {
@@ -43,20 +46,14 @@ class MenuAppBar extends React.Component {
 
   render() {
     const { classes } = this.props
-    const { auth, anchorEl } = this.state
+    const { auth, anchorEl, anchorEl2 } = this.state
     const open = Boolean(anchorEl)
     console.log('state', this.props)
     return (
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <IconButton
-              className={classes.menuButton}
-              color="contrast"
-              aria-label="Menu"
-            >
-              <MenuIcon />
-            </IconButton>
+            <LeftNavMenu />
             <Typography type="title" color="inherit" className={classes.flex}>
               {this.props.title}
             </Typography>
