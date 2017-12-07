@@ -2,16 +2,29 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import MenuAppBar from '../../components/MenuAppBar'
 import SimpleBottomNavigation from '../../components/NavBarBottom'
+import SignupFields from '../../components/Signup'
+import { withStyles } from 'material-ui/styles'
+import Overlay from '../../images/overlay.png'
+
+const styles = {
+  overlay: {
+    height: '100%',
+    width: '100vw',
+    flexGrow: 1,
+    backgroundImage: `url(${Overlay})`,
+    zIndex: '-98'
+  }
+}
 
 class SignUp extends React.Component {
   render() {
     return (
-      <div>
+      <div style={styles.overlay}>
         <MenuAppBar title="Sign Up" />
-        <h1>SignUp</h1>
+        <SignupFields />
         <SimpleBottomNavigation />
       </div>
     )
   }
 }
-export default SignUp
+export default withStyles(styles)(SignUp)

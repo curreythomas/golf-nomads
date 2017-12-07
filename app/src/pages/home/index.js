@@ -23,7 +23,7 @@ const styles = {
     zIndex: '-98'
   },
   container: {
-    //marginTop: '50%',
+    paddingTop: '10em',
     flexGrow: 1,
     justifyContent: 'center',
     textAlign: 'center'
