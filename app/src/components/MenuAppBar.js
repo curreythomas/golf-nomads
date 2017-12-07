@@ -6,7 +6,6 @@ import AppBar from 'material-ui/AppBar'
 import Toolbar from 'material-ui/Toolbar'
 import Typography from 'material-ui/Typography'
 import IconButton from 'material-ui/IconButton'
-import MenuIcon from 'material-ui-icons/Menu'
 import AccountCircle from 'material-ui-icons/AccountCircle'
 import Menu, { MenuItem } from 'material-ui/Menu'
 import LeftNavMenu from './LeftNavMenu'
@@ -14,7 +13,8 @@ import LeftNavMenu from './LeftNavMenu'
 const styles = theme => ({
   root: {
     width: '100%',
-    top: '0'
+    top: '0',
+    position: 'fixed'
   },
   flex: {
     flex: 1
@@ -54,7 +54,7 @@ class MenuAppBar extends React.Component {
 
   render() {
     const { classes } = this.props
-    const { auth, anchorEl, anchorEl2 } = this.state
+    const { auth, anchorEl } = this.state
     const open = Boolean(anchorEl)
     console.log('state', this.props)
     return (

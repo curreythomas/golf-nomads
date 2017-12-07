@@ -5,7 +5,6 @@ import Background from '../../images/golf4.jpg'
 
 const styles = {
   height: '100vh',
-  backgroundSize: 'contain',
   background: 'no-repeat center center fixed',
   backgroundImage: `url(${Background})`
 }
