@@ -11,7 +11,7 @@ const styles = {
   background: {
     flexGrow: 1,
     height: '100vh',
-    background: 'no-repeat 50% 50%',
+    background: 'no-repeat 20% 60%',
     backgroundImage: `url(${Background})`,
     zIndex: '-99'
   },
@@ -31,6 +31,9 @@ const styles = {
   button: {
     flexGrow: 1,
     textAlign: 'center'
+  },
+  link: {
+    textDecoration: 'none'
   }
 }
 
@@ -60,7 +63,9 @@ class Home extends React.Component {
             </Typography>
           </div>
           <div style={styles.button}>
-            <Button raised>Book a Tee Time</Button>
+            <Link to="/courses" style={styles.link}>
+              <Button raised>Book a Tee Time</Button>
+            </Link>
           </div>
         </div>
         <SimpleBottomNavigation />

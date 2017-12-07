@@ -7,6 +7,8 @@ import BottomNavigation, {
 import HomeIcon from 'material-ui-icons/Home'
 import GolfIcon from 'material-ui-icons/GolfCourse'
 import LocalLibraryIcon from 'material-ui-icons/LocalLibrary'
+import { Link } from 'react-router-dom'
+import history from '../history'
 
 const styles = {
   root: {
@@ -18,7 +20,7 @@ const styles = {
 
 class SimpleBottomNavigation extends React.Component {
   state = {
-    value: 0
+    value: 'Courses'
   }
 
   handleChange = (event, value) => {
@@ -36,9 +38,21 @@ class SimpleBottomNavigation extends React.Component {
         showLabels
         className={classes.root}
       >
-        <BottomNavigationButton label="Home" icon={<HomeIcon />} />
-        <BottomNavigationButton label="Courses" icon={<GolfIcon />} />
-        <BottomNavigationButton label="About" icon={<LocalLibraryIcon />} />
+        <BottomNavigationButton
+          label="Home"
+          icon={<HomeIcon />}
+          onClick={e => history.replace('/')}
+        />
+        <BottomNavigationButton
+          label="Courses"
+          icon={<GolfIcon />}
+          onClick={e => history.replace('/courses')}
+        />
+        <BottomNavigationButton
+          label="About"
+          icon={<LocalLibraryIcon />}
+          onClick={e => history.replace('/about')}
+        />
       </BottomNavigation>
     )
   }

@@ -59,6 +59,9 @@ const styles = theme => ({
   form: {
     paddingTop: '2em',
     paddingBottom: '2em'
+  },
+  link: {
+    textDecoration: 'none'
   }
 })
 
@@ -117,7 +120,7 @@ function Signup(props) {
               type="date"
               className={classes.datePicker}
             />
-            <Link to="/">
+            <Link to="/" className={classes.link}>
               <div className={classes.button}>
                 <Button
                   raised

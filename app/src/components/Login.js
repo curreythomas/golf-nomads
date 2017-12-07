@@ -51,6 +51,9 @@ const styles = theme => ({
   form: {
     paddingTop: '2em',
     paddingBottom: '2em'
+  },
+  link: {
+    textDecoration: 'none'
   }
 })
 
@@ -83,7 +86,7 @@ function LoginFields(props) {
               margin="normal"
             />
             <div className={classes.button}>
-              <Link to="/">
+              <Link to="/" className={classes.link}>
                 <Button
                   raised
                   color="primary"
