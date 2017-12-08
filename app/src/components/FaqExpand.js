@@ -19,6 +19,13 @@ const styles = theme => ({
   },
   nested: {
     paddingLeft: theme.spacing.unit * 4
+  },
+  background: {
+    flexGrow: 1,
+    height: '100vh',
+    background: 'no-repeat 20% 60%',
+    backgroundColor: '#efefef',
+    zIndex: '-99'
   }
 })
 
@@ -53,107 +60,109 @@ class NestedList extends React.Component {
     const { classes } = this.props
 
     return (
-      <List
-        className={classes.root}
-        subheader={<ListSubheader>Frequently Asked Questions</ListSubheader>}
-      >
-        <ListItem button onClick={this.handleClick}>
-          <ListItemIcon>
-            <Question />
-          </ListItemIcon>
-          <ListItemText inset primary="How do I contact Golf Nomads?" />
-          {this.state.open ? <ExpandLess /> : <ExpandMore />}
-        </ListItem>
-        <Collapse
-          component="li"
-          in={this.state.open}
-          timeout="auto"
-          unmountOnExit
+      <div className={classes.background}>
+        <List
+          className={classes.root}
+          subheader={<ListSubheader>Frequently Asked Questions</ListSubheader>}
         >
-          <List disablePadding>
-            <ListItem button className={classes.nested}>
-              <Link to="/contact">
+          <ListItem button onClick={this.handleClick}>
+            <ListItemIcon>
+              <Question />
+            </ListItemIcon>
+            <ListItemText inset primary="How do I contact Golf Nomads?" />
+            {this.state.open ? <ExpandLess /> : <ExpandMore />}
+          </ListItem>
+          <Collapse
+            component="li"
+            in={this.state.open}
+            timeout="auto"
+            unmountOnExit
+          >
+            <List disablePadding>
+              <ListItem button className={classes.nested}>
+                <Link to="/contact">
+                  <ListItemText
+                    inset
+                    primary="Please visit our Contact page and fill out our contact form"
+                  />
+                </Link>
+              </ListItem>
+            </List>
+          </Collapse>
+          <ListItem button onClick={this.handleClick2}>
+            <ListItemIcon>
+              <Question />
+            </ListItemIcon>
+            <ListItemText
+              inset
+              primary="Where can I see a list of all golf courses?"
+            />
+            {this.state.open ? <ExpandLess /> : <ExpandMore />}
+          </ListItem>
+          <Collapse
+            component="li"
+            in={this.state.open2}
+            timeout="auto"
+            unmountOnExit
+          >
+            <List disablePadding>
+              <ListItem button className={classes.nested}>
                 <ListItemText
                   inset
-                  primary="Please visit our Contact page and fill out our contact form"
+                  primary="Navigate to the courses page through the bottom navigation and see all the courses you want!"
                 />
-              </Link>
-            </ListItem>
-          </List>
-        </Collapse>
-        <ListItem button onClick={this.handleClick2}>
-          <ListItemIcon>
-            <Question />
-          </ListItemIcon>
-          <ListItemText
-            inset
-            primary="Where can I see a list of all golf courses?"
-          />
-          {this.state.open ? <ExpandLess /> : <ExpandMore />}
-        </ListItem>
-        <Collapse
-          component="li"
-          in={this.state.open2}
-          timeout="auto"
-          unmountOnExit
-        >
-          <List disablePadding>
-            <ListItem button className={classes.nested}>
-              <ListItemText
-                inset
-                primary="Navigate to the courses page through the bottom navigation and see all the courses you want!"
-              />
-            </ListItem>
-          </List>
-        </Collapse>
-        <ListItem button onClick={this.handleClick3}>
-          <ListItemIcon>
-            <Question />
-          </ListItemIcon>
-          <ListItemText inset primary="How can I contact a golf course?" />
-          {this.state.open ? <ExpandLess /> : <ExpandMore />}
-        </ListItem>
-        <Collapse
-          component="li"
-          in={this.state.open3}
-          timeout="auto"
-          unmountOnExit
-        >
-          <List disablePadding>
-            <ListItem button className={classes.nested}>
-              <ListItemText
-                inset
-                primary="After navigating to a specific courses information there is a button to link you to their website. Alternatively, there is a button you may click to call them directly."
-              />
-            </ListItem>
-          </List>
-        </Collapse>
-        <ListItem button onClick={this.handleClick4}>
-          <ListItemIcon>
-            <Question />
-          </ListItemIcon>
-          <ListItemText
-            inset
-            primary="How can I see more information about a specific course?"
-          />
-          {this.state.open ? <ExpandLess /> : <ExpandMore />}
-        </ListItem>
-        <Collapse
-          component="li"
-          in={this.state.open4}
-          timeout="auto"
-          unmountOnExit
-        >
-          <List disablePadding>
-            <ListItem button className={classes.nested}>
-              <ListItemText
-                inset
-                primary="From the courses page, you can click on a specific course and you will be brought to that individual course page and see more information."
-              />
-            </ListItem>
-          </List>
-        </Collapse>
-      </List>
+              </ListItem>
+            </List>
+          </Collapse>
+          <ListItem button onClick={this.handleClick3}>
+            <ListItemIcon>
+              <Question />
+            </ListItemIcon>
+            <ListItemText inset primary="How can I contact a golf course?" />
+            {this.state.open ? <ExpandLess /> : <ExpandMore />}
+          </ListItem>
+          <Collapse
+            component="li"
+            in={this.state.open3}
+            timeout="auto"
+            unmountOnExit
+          >
+            <List disablePadding>
+              <ListItem button className={classes.nested}>
+                <ListItemText
+                  inset
+                  primary="After navigating to a specific courses information there is a button to link you to their website. Alternatively, there is a button you may click to call them directly."
+                />
+              </ListItem>
+            </List>
+          </Collapse>
+          <ListItem button onClick={this.handleClick4}>
+            <ListItemIcon>
+              <Question />
+            </ListItemIcon>
+            <ListItemText
+              inset
+              primary="How can I see more information about a specific course?"
+            />
+            {this.state.open ? <ExpandLess /> : <ExpandMore />}
+          </ListItem>
+          <Collapse
+            component="li"
+            in={this.state.open4}
+            timeout="auto"
+            unmountOnExit
+          >
+            <List disablePadding>
+              <ListItem button className={classes.nested}>
+                <ListItemText
+                  inset
+                  primary="From the courses page, you can click on a specific course and you will be brought to that individual course page and see more information."
+                />
+              </ListItem>
+            </List>
+          </Collapse>
+        </List>
+      </div>
     )
   }
 }
