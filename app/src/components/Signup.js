@@ -82,6 +82,7 @@ function Signup(props) {
               type="name"
               className={classes.textField}
               margin="normal"
+              required="true"
             />
             <TextField
               id="required"
@@ -89,6 +90,7 @@ function Signup(props) {
               type="name"
               className={classes.textField}
               margin="normal"
+              required="true"
             />
             <TextField
               id="required"
@@ -97,6 +99,7 @@ function Signup(props) {
               autoComplete="current-email"
               className={classes.textField}
               margin="normal"
+              required="true"
             />
             <TextField
               id="required"
@@ -105,6 +108,7 @@ function Signup(props) {
               type="password"
               autoComplete="current-password"
               margin="normal"
+              required="true"
             />
             <TextField
               id="required"
@@ -113,12 +117,14 @@ function Signup(props) {
               type="password"
               autoComplete="current-password"
               margin="normal"
+              required="true"
             />
             <TextField
               id="date"
               label="Birthday"
               type="date"
               className={classes.datePicker}
+              required="true"
             />
             <Link to="/" className={classes.link}>
               <div className={classes.button}>
