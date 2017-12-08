@@ -16,7 +16,8 @@ const styles = theme => ({
     paddingBottom: 16,
     marginRight: theme.spacing.unit * 5,
     marginLeft: theme.spacing.unit * 5,
-    marginTop: theme.spacing.unit * 5
+    marginTop: theme.spacing.unit * 5,
+    marginBottom: theme.spacing.unit * 5
   }),
   textField: {
     marginLeft: theme.spacing.unit,
@@ -76,6 +77,7 @@ function LoginFields(props) {
               autoComplete="current-email"
               className={classes.textField}
               margin="normal"
+              required="true"
             />
             <TextField
               id="required"
@@ -84,6 +86,7 @@ function LoginFields(props) {
               type="password"
               autoComplete="current-password"
               margin="normal"
+              required="true"
             />
             <div className={classes.button}>
               <Link to="/" className={classes.link}>

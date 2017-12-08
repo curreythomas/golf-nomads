@@ -8,7 +8,7 @@ import Overlay from '../../images/overlay.png'
 
 const styles = {
   overlay: {
-    height: '100%',
+    height: '100vh',
     width: '100vw',
     flexGrow: 1,
     backgroundImage: `url(${Overlay})`,
