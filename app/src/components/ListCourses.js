@@ -6,6 +6,8 @@ import Subheader from 'material-ui/List/ListSubheader'
 import IconButton from 'material-ui/IconButton'
 import InfoIcon from 'material-ui-icons/Info'
 import tileData from '../tileData/tileData'
+import Button from 'material-ui/Button'
+import { Link } from 'react-router-dom'
 
 const styles = theme => ({
   container: {
@@ -37,9 +39,11 @@ function ListCourses(props) {
               title={tile.name}
               subtitle={<span>{tile.city + ', ' + tile.state}</span>}
               actionIcon={
-                <IconButton>
-                  <InfoIcon color="rgba(255, 255, 255, 0.54)" />
-                </IconButton>
+                <Link to="/courses/`${tile._id}`">
+                  <IconButton>
+                    <InfoIcon color="rgba(255, 255, 255, 0.54)" />
+                  </IconButton>
+                </Link>
               }
             />
           </GridListTile>
