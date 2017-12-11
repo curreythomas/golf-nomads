@@ -5,11 +5,11 @@ import { GridList, GridListTile, GridListTileBar } from 'material-ui/GridList'
 import Subheader from 'material-ui/List/ListSubheader'
 import IconButton from 'material-ui/IconButton'
 import InfoIcon from 'material-ui-icons/Info'
-//import tileData from '../tileData/tileData'
 import { setCourses } from '../action-creators/courses'
 import { map } from 'ramda'
 import { connect } from 'react-redux'
 import history from '../history'
+
 
 const styles = theme => ({
   container: {
@@ -74,6 +74,7 @@ const mapActionsToProps = dispatch => {
       dispatch(setCourses, history)
     }
   }
+
 }
 
 ListCourses.propTypes = {
