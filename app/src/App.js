@@ -5,7 +5,7 @@ import About from './pages/about/index'
 import Faq from './pages/faq/index'
 import Contact from './pages/contact/index'
 import Courses from './pages/courses/index'
-import ViewCourse from './pages/courses/view'
+import ViewCourseCard from './pages/courses/view'
 import Login from './pages/login/index'
 import SignUp from './pages/signup/index'
 import history from './history'
@@ -19,8 +19,8 @@ const App = props => {
           <Route path="/about" component={About} />
           <Route path="/faq" component={Faq} />
           <Route path="/contact" component={Contact} />
+          <Route path="/courses/:id" component={ViewCourseCard} />
           <Route path="/courses" component={Courses} />
-          <Route path="/courses/:id" component={ViewCourse} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={SignUp} />
         </Switch>

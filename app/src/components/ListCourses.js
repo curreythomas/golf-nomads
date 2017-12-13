@@ -10,7 +10,6 @@ import { map } from 'ramda'
 import { connect } from 'react-redux'
 import history from '../history'
 
-
 const styles = theme => ({
   container: {
     display: 'flex',
@@ -66,7 +65,6 @@ class ListCourses extends React.Component {
 
 const mapStateToProps = state => {
   return { courses: state.courses }
-  console.log('state', state)
 }
 const mapActionsToProps = dispatch => {
   return {
@@ -74,7 +72,6 @@ const mapActionsToProps = dispatch => {
       dispatch(setCourses, history)
     }
   }
-
 }
 
 ListCourses.propTypes = {

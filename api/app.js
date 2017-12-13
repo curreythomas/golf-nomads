@@ -7,6 +7,7 @@ const port = process.env.PORT || 5000
 const HTTPError = require('node-http-error')
 const bodyParser = require('body-parser')
 const { filter, compose, split, pathOr } = require('ramda')
+const cors = require('cors')
 const sgMail = require('@sendgrid/mail')
 // const checkRequiredFields = require('./lib/check-required-fields')
 
@@ -20,6 +21,7 @@ const msg = {
 }
 sgMail.send(msg)
 
+app.use(cors({ credentials: true }))
 app.use(bodyParser.json())
 
 app.get('/', (req, res, next) =>
