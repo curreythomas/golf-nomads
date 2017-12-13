@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import lightBlue from 'material-ui/colors/lightBlue'
+import { grey } from 'material-ui/colors'
 import { Link } from 'react-router-dom'
 import { withStyles } from 'material-ui/styles'
 import AppBar from 'material-ui/AppBar'
@@ -60,7 +60,7 @@ class MenuAppBar extends React.Component {
     const open = Boolean(anchorEl)
     return (
       <div className={classes.root}>
-        <AppBar position="static" backgroundColor="lightBlue">
+        <AppBar position="static" color="primary">
           <Toolbar>
             <LeftNavMenu />
             <Typography type="title" color="inherit" className={classes.flex}>

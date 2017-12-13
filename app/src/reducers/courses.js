@@ -12,7 +12,7 @@ export const courses = (state = [], action) => {
 export const currentCourse = (state = {}, action) => {
   switch (action.type) {
     case SET_CURRENT_COURSE:
-      return action.payload
+      return console.log('THIS SHOULD FIRE!!!', action.payload), action.payload
     default:
       return state
   }
