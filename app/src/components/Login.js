@@ -5,9 +5,7 @@ import Paper from 'material-ui/Paper'
 import Typography from 'material-ui/Typography'
 import TextField from 'material-ui/TextField'
 import Button from 'material-ui/Button'
-import Avatar from 'material-ui/Avatar'
 import AccountCircle from 'material-ui-icons/AccountCircle'
-import history from '../history'
 import { Link } from 'react-router-dom'
 
 const styles = theme => ({

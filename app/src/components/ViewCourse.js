@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import IconButton from 'material-ui/IconButton'
-import FavoriteIcon from 'material-ui-icons/Favorite'
 import PhoneIcon from 'material-ui-icons/Phone'
 import DirectionsIcon from 'material-ui-icons/Directions'
 import { withStyles } from 'material-ui/styles'
@@ -14,20 +13,7 @@ import Card, {
 import Avatar from 'material-ui/Avatar'
 import Button from 'material-ui/Button'
 import Typography from 'material-ui/Typography'
-import {
-  not,
-  isNil,
-  slice,
-  toUpper,
-  contains,
-  head,
-  drop,
-  compose,
-  toLower,
-  join,
-  split,
-  pathOr
-} from 'ramda'
+import { not, isNil } from 'ramda'
 import { setCurrentCourse } from '../action-creators/courses'
 import { connect } from 'react-redux'
 import history from '../history'
@@ -62,7 +48,6 @@ class ViewCourseCard extends React.Component {
     this.props.setCurrentCourse(id)
   }
   render() {
-    const currentID = pathOr('', ['currentCourse', '_id'], props)
     const websiteButton = not(isNil(this.props.currentCourse.website)) ? (
       <Button
         dense
@@ -73,8 +58,6 @@ class ViewCourseCard extends React.Component {
       </Button>
     ) : null
     const { classes } = this.props
-    const removeArticles = arrData =>
-      contains(head(arrData), ['the', 'a', 'an']) ? drop(1, arrData) : arrData
     const props = this.props.currentCourse
     console.log('PROPSSSSS', this.props)
     return (
@@ -82,6 +65,7 @@ class ViewCourseCard extends React.Component {
         <Card className={classes.card} style={{ marginBottom: 32 }}>
           <CardMedia className={classes.media}>
             <img
+              alt="Golf Course"
               title={props.name}
               width="100%"
               height="100%"

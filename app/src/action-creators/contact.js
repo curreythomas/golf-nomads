@@ -2,7 +2,8 @@ import fetch from 'isomorphic-fetch'
 import {
   SET_CONTACT_MSG,
   UPDATE_NEW_CONTACT_FORM,
-  IS_ACTIVE
+  IS_ACTIVE,
+  TOGGLE_EMAIL_ERROR
 } from '../constants'
 import history from '../history'
 import { isEmpty } from 'ramda'
@@ -24,12 +25,11 @@ export const addNewMessage = (data, history) => async (dispatch, getState) => {
     method,
     body
   }).then(res => res.json())
-  if (result.ok) {
-    dispatch(setMessage)
-    //dispatch({ type: IS_ACTIVE, payload: true })
-    history.push('/')
+  if (!result.ok) {
+    dispatch(TOGGLE_EMAIL_ERROR)
   } else {
-    // handle error
+    dispatch(setMessage)
+    history.push('/')
   }
 }
 
@@ -47,6 +47,8 @@ export const isActive = async (dispatch, getState) => {
 }
 
 export const setMessage = async (dispatch, getState) => {
-  const response = await fetch(`${url}/messages`).then(res => res.json())
-  dispatch({ type: SET_CONTACT_MSG, payload: response })
+  const response = await fetch(`${url}`)
+    .then(res => res.json())
+    .catch(err => console.log('this is your error:', err))
+  dispatch({ type: SET_CONTACT_MSG })
 }

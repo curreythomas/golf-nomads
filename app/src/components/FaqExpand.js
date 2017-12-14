@@ -9,8 +9,6 @@ import ExpandLess from 'material-ui-icons/ExpandLess'
 import ExpandMore from 'material-ui-icons/ExpandMore'
 import { Link } from 'react-router-dom'
 
-var Contact = 'http://www.golfnomads.co/contact'
-
 const styles = theme => ({
   root: {
     width: '100%',

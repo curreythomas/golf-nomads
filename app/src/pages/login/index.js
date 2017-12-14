@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import MenuAppBar from '../../components/MenuAppBar'
 import SimpleBottomNavigation from '../../components/NavBarBottom'
 import LoginFields from '../../components/Login'

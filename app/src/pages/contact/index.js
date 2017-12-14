@@ -10,6 +10,8 @@ import {
   addNewMessage,
   isActive
 } from '../../action-creators/contact'
+import SimpleSnackbar from '../../components/ErrorSnacks'
+import { TOGGLE_EMAIL_ERROR } from '../../constants'
 
 const styles = {
   background: {
@@ -47,6 +49,10 @@ class Contact extends React.Component {
             )}
             isActive={this.props.isActive}
           />
+          <SimpleSnackbar
+            open={this.props.displayEmailError}
+            errorConfirm={this.props.errorConfirm}
+          />
           <SimpleBottomNavigation />
         </div>
       </div>
@@ -57,7 +63,8 @@ class Contact extends React.Component {
 const mapStateToProps = state => {
   return {
     newMessage: state.newMessage,
-    isActive: state.isActive
+    isActive: state.isActive,
+    displayEmailError: state.errors.displayEmailError
   }
 }
 
@@ -70,7 +77,9 @@ const mapActionsToProps = dispatch => {
     onSubmit: (data, history) => e => {
       dispatch(addNewMessage(data, history))
     },
-    isSubmitActive: () => dispatch(isActive)
+    isSubmitActive: () => dispatch(isActive),
+
+    errorConfirm: () => dispatch(TOGGLE_EMAIL_ERROR)
   }
 }
 
