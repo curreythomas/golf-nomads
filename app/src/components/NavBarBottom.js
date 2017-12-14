@@ -7,7 +7,6 @@ import BottomNavigation, {
 import HomeIcon from 'material-ui-icons/Home'
 import GolfIcon from 'material-ui-icons/GolfCourse'
 import LocalLibraryIcon from 'material-ui-icons/LocalLibrary'
-import { Link } from 'react-router-dom'
 import history from '../history'
 
 const styles = {

@@ -5,7 +5,7 @@ import IconButton from 'material-ui/IconButton'
 import Divider from 'material-ui/Divider'
 import MenuIcon from 'material-ui-icons/Menu'
 import { Link } from 'react-router-dom'
-import Menu, { MenuItem, MenuList } from 'material-ui/Menu'
+import Menu, { MenuItem } from 'material-ui/Menu'
 
 const styles = theme => ({
   menuButton: {
@@ -46,8 +46,7 @@ class LeftNavMenu extends React.Component {
 
   render() {
     const { classes } = this.props
-    const { anchorEl } = this.state
-    const open = Boolean(anchorEl)
+
     return (
       <div>
         <IconButton

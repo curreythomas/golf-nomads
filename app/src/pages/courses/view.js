@@ -1,5 +1,4 @@
 import React from 'react'
-import MenuAppBar from '../../components/MenuAppBar'
 import SimpleBottomNavigation from '../../components/NavBarBottom'
 import ViewCourseCard from '../../components/ViewCourse'
 import SimpleAppBar from '../../components/SecondaryNavbar'

@@ -6,7 +6,6 @@ import Typography from 'material-ui/Typography'
 import TextField from 'material-ui/TextField'
 import Button from 'material-ui/Button'
 import history from '../history'
-import { Link } from 'react-router-dom'
 
 const styles = theme => ({
   root: theme.mixins.gutters({

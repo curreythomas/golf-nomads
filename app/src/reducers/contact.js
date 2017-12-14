@@ -8,7 +8,7 @@ import { merge } from 'ramda'
 export const setNewMessage = (state = {}, action) => {
   switch (action.type) {
     case SET_CONTACT_MSG:
-      return action.payload
+      return newMessageDefault
     default:
       return state
   }

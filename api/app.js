@@ -55,7 +55,7 @@ app.post('/messages', (req, res, next) => {
   const body = req.body
   sgMail
     .send(body)
-    .then(response => res.status(200).send(response))
+    .then(response => res.status(200).send({ ok: true }))
     .catch(err => {
       console.log(err)
       next(new HTTPError(400, 'error', err))
