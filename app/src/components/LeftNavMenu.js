@@ -60,7 +60,6 @@ class LeftNavMenu extends React.Component {
           <MenuIcon />
         </IconButton>
         <Menu
-          autoWidth={true}
           id="simple-menu"
           anchorEl={this.state.anchorEl}
           open={this.state.open}
