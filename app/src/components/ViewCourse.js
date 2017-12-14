@@ -31,6 +31,7 @@ import {
 import { setCurrentCourse } from '../action-creators/courses'
 import { connect } from 'react-redux'
 import history from '../history'
+import BookTeeTime from './TeeTimeDialog'
 
 const styles = {
   card: {
@@ -52,11 +53,6 @@ const styles = {
   },
   container: {
     flex: 1
-  },
-  button: {
-    position: 'absolute',
-    right: 0,
-    marginRight: '1em'
   }
 }
 
@@ -125,10 +121,7 @@ class ViewCourseCard extends React.Component {
                   <DirectionsIcon />
                 </IconButton>
               </a>
-
-              <Button raised color="primary" className={classes.button}>
-                Book A Tee Time
-              </Button>
+              <BookTeeTime />
             </CardActions>
           </div>
 

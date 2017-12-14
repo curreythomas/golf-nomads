@@ -50,28 +50,18 @@ const styles = theme => ({
 })
 
 class ContactForm extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { value: '' }
-
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
-
-  handleChange(event) {
-    this.setState({ value: event.target.value })
-  }
-
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value)
-    event.preventDefault()
-  }
-
   render() {
     const { classes } = this.props
+    console.log('this.props', this.props)
     return (
       <div className={classes.root}>
-        <form onSubmit={this.handleSubmit} className={classes.form}>
+        <form
+          className={classes.form}
+          onSubmit={e => {
+            e.preventDefault()
+            this.props.onSubmit()
+          }}
+        >
           <Paper className={classes.root} elevation={4} opacity="50%">
             <div className={classes.container}>
               <Typography
@@ -82,45 +72,60 @@ class ContactForm extends React.Component {
                 Contact
               </Typography>
               <TextField
-                id="required"
                 label="First Name"
                 type="name"
                 className={classes.textField}
                 margin="normal"
-                required="true"
+                required
+                value={this.props.newMessage.subject}
+                onChange={e => {
+                  this.props.onChange('subject', e.target.value)
+                }}
               />
               <TextField
-                id="required"
                 label="Last Name"
                 type="name"
                 className={classes.textField}
                 margin="normal"
-                required="true"
+                required
+                value={this.props.newMessage.text}
+                onChange={e => {
+                  this.props.onChange('text', e.target.value)
+                }}
               />
               <TextField
-                id="required"
                 label="Email"
                 type="email"
                 autoComplete="current-email"
                 className={classes.textField}
                 margin="normal"
-                required="true"
+                required
+                value={this.props.newMessage.from}
+                onChange={e => {
+                  this.props.onChange('from', e.target.value)
+                }}
               />
               <TextField
-                id="required"
                 label="Message"
                 multiline
                 rows="4"
                 className={classes.textField}
                 margin="normal"
-                required="true"
+                required
+                value={(this.props.newMessage.text, this.props.newMessage.html)}
+                onChange={e => {
+                  this.props.onChange('html', e.target.value)
+                }}
               />
               <div className={classes.button}>
-                <Link to="/" className={classes.link}>
-                  <Button raised color="primary" type="submit">
-                    Submit
-                  </Button>
-                </Link>
+                <Button
+                  raised
+                  color="primary"
+                  type="submit"
+                  disabled={this.props.isActive}
+                >
+                  Submit
+                </Button>
               </div>
             </div>
           </Paper>

@@ -12,14 +12,6 @@ const sgMail = require('@sendgrid/mail')
 // const checkRequiredFields = require('./lib/check-required-fields')
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
-const msg = {
-  to: 'test@example.com',
-  from: 'test@example.com',
-  subject: 'Sending with SendGrid is Fun',
-  text: 'and easy to do anywhere, even with Node.js',
-  html: '<strong>and easy to do anywhere, even with Node.js</strong>'
-}
-sgMail.send(msg)
 
 app.use(cors({ credentials: true }))
 app.use(bodyParser.json())
@@ -57,6 +49,17 @@ app.get('/courses/:id', (req, res, next) => {
   getCourse(req.params.id)
     .then(result => res.status(200).send(result))
     .catch(err => next(err => new HTTPError(err.status, err.message)))
+})
+
+app.post('/messages', (req, res, next) => {
+  const body = req.body
+  sgMail
+    .send(body)
+    .then(response => res.status(200).send(response))
+    .catch(err => {
+      console.log(err)
+      next(new HTTPError(400, 'error', err))
+    })
 })
 
 // ERROR HANDLER //

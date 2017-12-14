@@ -4,6 +4,12 @@ import SimpleBottomNavigation from '../../components/NavBarBottom'
 import Background from '../../images/golf5.jpg'
 import Overlay from '../../images/overlay.png'
 import ContactForm from '../../components/ContactForm'
+import { connect } from 'react-redux'
+import {
+  updateNewForm,
+  addNewMessage,
+  isActive
+} from '../../action-creators/contact'
 
 const styles = {
   background: {
@@ -23,16 +29,51 @@ const styles = {
 }
 
 class Contact extends React.Component {
+  componentDidMount() {
+    this.props.isSubmitActive()
+    this.props.isSubmitActive()
+  }
   render() {
     return (
       <div style={styles.background}>
         <div style={styles.overlay}>
           <MenuAppBar title="Contact Us" />
-          <ContactForm />
+          <ContactForm
+            onChange={this.props.onChange}
+            newMessage={this.props.newMessage}
+            onSubmit={this.props.onSubmit(
+              this.props.newMessage,
+              this.props.history
+            )}
+            isActive={this.props.isActive}
+          />
           <SimpleBottomNavigation />
         </div>
       </div>
     )
   }
 }
-export default Contact
+
+const mapStateToProps = state => {
+  return {
+    newMessage: state.newMessage,
+    isActive: state.isActive
+  }
+}
+
+const mapActionsToProps = dispatch => {
+  return {
+    onChange: (field, value) => {
+      dispatch(updateNewForm(field, value))
+      dispatch(isActive)
+    },
+    onSubmit: (data, history) => e => {
+      dispatch(addNewMessage(data, history))
+    },
+    isSubmitActive: () => dispatch(isActive)
+  }
+}
+
+const connector = connect(mapStateToProps, mapActionsToProps)
+
+export default connector(Contact)

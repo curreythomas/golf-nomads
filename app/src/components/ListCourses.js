@@ -9,21 +9,32 @@ import { setCourses } from '../action-creators/courses'
 import { map } from 'ramda'
 import { connect } from 'react-redux'
 import history from '../history'
+import Input, { InputLabel } from 'material-ui/Input'
+import { MenuItem } from 'material-ui/Menu'
+import { FormControl } from 'material-ui/Form'
+import Select from 'material-ui/Select'
 
 const styles = theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-around',
+
     overflow: 'hidden',
     background: theme.palette.background.paper,
     paddingRight: theme.spacing.unit,
     paddingLeft: theme.spacing.unit,
-    paddingTop: theme.spacing.unit * 15
+    paddingTop: theme.spacing.unit * 10
   },
   gridList: {
     height: '100vh',
     paddingBottom: theme.spacing.unit * 15
+  },
+  formControl: {
+    minWidth: 182,
+    marginBottom: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    marginLeft: theme.spacing.unit,
+    paddingTop: 0
   }
 })
 
@@ -34,9 +45,36 @@ class ListCourses extends React.Component {
   }
   render() {
     const { classes } = this.props
-    console.log(this.props)
+    console.log('this.props', this.props.courses)
     return (
       <div className={classes.container}>
+        <FormControl className={classes.formControl}>
+          <InputLabel htmlFor="filter">Filter By</InputLabel>
+          <Select
+            value={this.props.courses}
+            onChange={this.handleChange}
+            input={<Input name="Filter By" id="filter" />}
+          >
+            <MenuItem value="" />
+            <MenuItem value={this.props.city}>City</MenuItem>
+            <MenuItem value={this.props.holes}>Holes</MenuItem>
+            <MenuItem value={this.props.golfers}>Golfers</MenuItem>
+          </Select>
+        </FormControl>
+        <FormControl className={classes.formControl}>
+          <InputLabel htmlFor="sort">Sort</InputLabel>
+          <Select
+            value={this.props.courses}
+            onChange={this.handleChange}
+            input={<Input name="Sort" id="Sort" />}
+          >
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
+            <MenuItem value={this.props.city}>A to Z</MenuItem>
+            <MenuItem value={this.props.name}>Z to A</MenuItem>
+          </Select>
+        </FormControl>
         <GridList cellHeight={180} className={classes.gridList}>
           {this.props.courses.map(course => (
             <GridListTile
