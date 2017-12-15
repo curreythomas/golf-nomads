@@ -85,16 +85,14 @@ class ListCourses extends React.Component {
             }}
           >
             <MenuItem value="" />
+            <MenuItem value={'Awendaw'}>Awendaw</MenuItem>
             <MenuItem value={'Charleston'}>Charleston</MenuItem>
             <MenuItem value={'Edisto Island'}>Edisto Island</MenuItem>
             <MenuItem value={'Hollywood'}>Hollywood</MenuItem>
             <MenuItem value={'Isle of Palms'}>Isle of Palms</MenuItem>
-            <MenuItem value={'James Island'}>James Island</MenuItem>
             <MenuItem value={'Johns Island'}>Johns Island</MenuItem>
             <MenuItem value={'Kiawah Island'}>Kiawah Island</MenuItem>
-            <MenuItem value={'Ladson'}>Ladson</MenuItem>
             <MenuItem value={'Mount Pleasant'}>Mount Pleasant</MenuItem>
-            <MenuItem value={'Moncks Corner'}>Moncks Corner</MenuItem>
             <MenuItem value={'North Charleston'}>North Charleston</MenuItem>
             <MenuItem value={'Seabrook Island'}>Seabrook Island</MenuItem>
             <MenuItem value={'Summerville'}>Summerville</MenuItem>
