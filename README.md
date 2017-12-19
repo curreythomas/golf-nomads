@@ -1,4 +1,6 @@
-# golf-sherpa
+# Golf-Nomads
+
+Below are some notes I put together before creating this app. It is a list of the things i wanted to accomplish in 2 weeks. 
 
 ## Chrome
 
@@ -168,8 +170,17 @@ button. User is directed to the add tee time page (UI: courses/id/teetimes/add)
        golfers: "number of golfers",
        holes: "number of holes",
        rate: "price per person",
-       type: "course"
-       picURL: "image url"
+       type: "course",
+       picURL: "image url",
+       logo: "log url"
     }
 ]
 ```
+### Things left to do:
+
+- Connect to the GolfNow api to make actual tee times and be able to display courses around the country.
+- Hook up Auth0 to authenticate users. Try and hook up with already created  login and sign-up pages and cover edge cases.
+- Look into hotel booking/Airbnb plugin or api to create another feature. 
+- Look into car rental api's to add that feature as well.
+- Look into flight booking capabilities
+- Lastly, look at different chat options to create a social aspect when booking golf travel with buddies.
