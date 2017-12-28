@@ -8,13 +8,13 @@ Below are some notes I put together before creating this app. It is a list of th
 
 ## Chrome
 
-0. AppBar
+1. AppBar
    * https://material-ui-next.com/demos/app-bar/
-0. AppBar Popup Menu
+2. AppBar Popup Menu
    * https://material-ui-next.com/demos/menus/
-0. Bottom Navigation
+3. Bottom Navigation
    * https://material-ui-next.com/demos/bottom-navigation/
-0. Overlay for Background Images - Custom CSS with similar features to this
+4. Overlay for Background Images - Custom CSS with similar features to this
    react-native example:
 
 ```
