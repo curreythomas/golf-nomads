@@ -10,11 +10,11 @@ Below are some notes I put together before creating this app. It is a list of th
 
 0. AppBar
    * https://material-ui-next.com/demos/app-bar/
-1. AppBar Popup Menu
+0. AppBar Popup Menu
    * https://material-ui-next.com/demos/menus/
-2. Bottom Navigation
+0. Bottom Navigation
    * https://material-ui-next.com/demos/bottom-navigation/
-3. Overlay for Background Images - Custom CSS with similar features to this
+0. Overlay for Background Images - Custom CSS with similar features to this
    react-native example:
 
 ```
