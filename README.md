@@ -4,7 +4,7 @@ Deployed front end to this address: https://golfnomads.now.sh/
 
 Working on getting database running full time in the cloud. Courses will only show while my computer is up and serving the data. 
 
-Below are some notes I put together before creating this app. It is a list of the things i wanted to accomplish in 2 weeks. 
+Below are some notes I put together before creating this app. It is a list of the things I wanted to accomplish in 2 weeks. 
 
 ## Chrome
 
